@@ -205,44 +205,7 @@ You have two instant options to launch:
 
 ---
 
-## 🚀 7. Production Deployment Guide
-
-### Deploying to Streamlit Community Cloud (Recommended - Free & 1-Click)
-
-1. **Push your project to GitHub:**
-   - Create a new public or private repository on [GitHub](https://github.com) named `GraphShield`.
-   - In your local `GraphShield` folder, push the code:
-     ```bash
-     git init
-     git add .
-     git commit -m "Initial commit: GraphShield GNN Fraud Platform"
-     git branch -M main
-     git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/GraphShield.git
-     git push -u origin main
-     ```
-2. **Deploy on Streamlit Community Cloud:**
-   - Go to [share.streamlit.io](https://share.streamlit.io) and log in with your GitHub account.
-   - Click **"New app"**.
-   - Select your repository: `<YOUR_GITHUB_USERNAME>/GraphShield`.
-   - Branch: `main`.
-   - Main file path: `app/streamlit_app.py`.
-   - Click **"Deploy!"**.
-   - Streamlit Cloud will automatically detect `.streamlit/config.toml` and `requirements.txt`, install dependencies, load the pre-trained weights and auto-initialize the SQLite database, giving you a live public URL in ~2 minutes!
-
-### Deploying with Docker
-A production multi-stage Dockerfile is included:
-```bash
-# Build the Docker image
-docker build -t graphshield:latest .
-
-# Run the container
-docker run -p 8501:8501 graphshield:latest
-```
-Access the application at `http://localhost:8501`.
-
----
-
-## 💻 8. Database & SQL Querying
+## 💻 7. Database & SQL Querying
 
 GraphShield embeds an SQLite database (`data/transactions.db`) with relational tables:
 - `transactions`: Complete transaction ledger.
