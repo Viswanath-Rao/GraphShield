@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Language Overrides for GitHub Linguist Breakdown
+*.js linguist-detectable=true linguist-language=JavaScript
+*.html linguist-detectable=true linguist-language=HTML
+*.css linguist-detectable=true linguist-language=CSS
+*.sql linguist-detectable=true linguist-language=SQL
+*.bat linguist-detectable=true linguist-language=Batchfile
+*.py linguist-detectable=true linguist-language=Python

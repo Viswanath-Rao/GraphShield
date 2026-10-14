@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphShield 3D WebGL Neural Galaxy</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="three_galaxy.js"></script>
+</head>
+<body style="background-color: #000000; overflow: hidden; margin: 0; padding: 0;">
+    <div id="webgl-container" style="width: 100vw; height: 100vh; position: relative;">
+        <div class="hud-overlay" style="position: absolute; top: 16px; left: 20px; z-index: 10; pointer-events: none;">
+            <div style="font-size: 0.9rem; font-weight: 800; color: #ffffff; letter-spacing: 1.5px;">
+                🌐 3D WEBGL NEURAL GRAPH TOPOLOGY
+            </div>
+            <div style="font-family: monospace; font-size: 0.7rem; color: #10b981; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); padding: 2px 8px; border-radius: 4px; margin-top: 4px; display: inline-block;">
+                GNN SPECTRAL EMBEDDINGS // LIVE FORCE SIMULATION
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 14px; right: 20px; font-family: monospace; font-size: 0.7rem; color: #64748b; pointer-events: none;">
+            🖱️ DRAG TO ROTATE &bull; SCROLL TO ZOOM
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initThreeGalaxy('webgl-container', 50, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
