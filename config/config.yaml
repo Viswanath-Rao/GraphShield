@@ -1,0 +1,68 @@
+# GraphShield Configuration File
+
+project:
+  name: "GraphShield"
+  version: "1.0.0"
+  description: "Financial Fraud Detection Using Graph Neural Networks"
+
+database:
+  db_path: "data/transactions.db"
+
+data:
+  raw_path: "data/raw/financial_transactions.csv"
+  processed_path: "data/processed/processed_transactions.parquet"
+  graph_cache_path: "data/processed/graph_data.pt"
+  sample_size: 50000
+  random_seed: 42
+  test_size: 0.20
+  val_size: 0.10
+
+features:
+  numerical_cols:
+    - "amount"
+    - "oldbalanceOrg"
+    - "newbalanceOrig"
+    - "oldbalanceDest"
+    - "newbalanceDest"
+    - "errorBalanceOrig"
+    - "errorBalanceDest"
+    - "hour_of_day"
+  categorical_cols:
+    - "type"
+  target_col: "isFraud"
+
+graph:
+  similarity_threshold: 0.8
+  max_neighbors: 15
+  node_feature_dim: 16
+
+models:
+  logistic_regression:
+    max_iter: 1000
+    class_weight: "balanced"
+    C: 1.0
+  random_forest:
+    n_estimators: 100
+    max_depth: 12
+    class_weight: "balanced"
+    random_state: 42
+  gcn:
+    hidden_dim: 64
+    num_layers: 2
+    dropout: 0.2
+    learning_rate: 0.005
+    weight_decay: 0.0001
+    epochs: 100
+  gat:
+    hidden_dim: 64
+    heads: 4
+    dropout: 0.3
+    learning_rate: 0.005
+    weight_decay: 0.0001
+    epochs: 100
+
+risk_scoring:
+  thresholds:
+    low: 0.30
+    medium: 0.70
+    high: 0.90

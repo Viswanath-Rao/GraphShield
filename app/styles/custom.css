@@ -1,0 +1,96 @@
+/* ==========================================================================
+   GRAPHSHIELD — MULTI-COLOR FINTECH & GNN FORENSIC SUITE
+   Pitch-Black OLED Theme | Emerald, Violet, Gold, Rose Accents
+   ========================================================================== */
+
+/* Hide Default Streamlit Clutter */
+#MainMenu, footer, header { visibility: hidden; height: 0; }
+
+.block-container {
+    padding-top: 1.2rem !important;
+    padding-bottom: 4rem !important;
+    max-width: 1560px !important;
+}
+
+/* Core True Pitch-Black OLED Canvas */
+.stApp {
+    background-color: #000000 !important;
+    background-image: 
+        radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 90% 15%, rgba(139, 92, 246, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(245, 158, 11, 0.03) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px) !important;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px !important;
+    color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Ambient Floating Energy Orbs (GPU Accelerated) */
+.stApp::before {
+    content: "";
+    position: fixed;
+    top: -12%;
+    left: -8%;
+    width: 580px;
+    height: 580px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: orbDrift1 20s ease-in-out infinite alternate;
+}
+.stApp::after {
+    content: "";
+    position: fixed;
+    bottom: -15%;
+    right: -8%;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: orbDrift2 24s ease-in-out infinite alternate;
+}
+@keyframes orbDrift1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(110px, 70px) scale(1.18); }
+}
+@keyframes orbDrift2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-90px, -80px) scale(1.22); }
+}
+
+/* 3D Card Lift */
+.metric-card {
+    background: #09090e;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+.metric-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Kinetic Typography */
+.brand-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #34d399 28%, #a78bfa 62%, #fbbf24 100%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: kineticShimmer 7s linear infinite;
+}
+@keyframes kineticShimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
